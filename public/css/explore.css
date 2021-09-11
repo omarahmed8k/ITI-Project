@@ -1,0 +1,74 @@
+#explore{
+	
+    border:1px solid #e6e6e6;
+    background-color: white;
+    margin-top: 55px;
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 600px;
+}
+
+.people__List{
+    border-bottom: 1px solid #e6e6e6;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*name and username*/
+
+.thread__info{
+	margin-right: auto;
+}
+
+.thread__info--name{
+	text-align: left;
+    margin-right: auto;
+    margin-left: 15px;
+    color: #999;
+}
+
+.thread__info--id{
+	text-align: left;
+    margin-right: auto;
+    margin-left: 15px;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/*Profile image to circular form*/
+.thread__photo{
+
+	border-bottom: 1px solid #e6e6e6;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thread__photo img{
+	height: 56px;
+    width: 56px;
+    border-radius: 50%;
+}
+
+/*follow button design*/
+.thread__follow{
+    color:white;
+    background-color: #3897f0;
+    border:0;
+    font-size:13px;
+    font-weight: 700;
+    padding:5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+.thread__follow:active{
+	opacity:0.8;
+}
+
+.thread__follow:focus{
+	outline:none;
+}

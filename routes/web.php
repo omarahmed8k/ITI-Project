@@ -48,6 +48,7 @@ Route::get('/post', function () {
     return view('post.viewPost');
 })->middleware('auth');
 
+
 // --------------
 
 // Auth (Register - Login - Forget Password)

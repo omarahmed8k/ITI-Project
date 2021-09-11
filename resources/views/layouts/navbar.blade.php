@@ -2,8 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset = "utf-8">
+    <meta description = "Instaclone Login">
+
+    <link rel="stylesheet" href="css/style.css">
+  <!-- images/favicon.ico -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Instagram</title>
@@ -13,6 +17,7 @@
 
     <link rel="shortcut icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custome.css') }}" rel="stylesheet">
@@ -49,11 +54,12 @@
                 </ul>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
+    <main id="feed">
+        @yield('content')
+
+    </main>
+    @yield('footercontent')
 </body>
 
 </html>

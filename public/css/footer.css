@@ -1,0 +1,36 @@
+/*at first, design the container :: footer*/
+footer{
+
+	display: flex; /*mandatory container for responsive design*/
+	justify-content: space-between; /*set the axis*/
+	align-items: center;
+	width: 95%; /*set the space in the container*/
+	margin: 55px auto;
+	text-transform: uppercase; /*lette design*/
+	font-weight: 700;
+}
+
+/*always container design shold be given for father*/
+ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/*for second, specific design for each class & id*/
+.footer__nav{
+	display: flex; /*make the element of the list stay responsive*/
+	list-style: none; /*erase the dot of the list*/
+	flex-wrap: wrap;
+}
+
+.footer__item{
+	margin-right: 25px;
+}
+
+.footer__link{
+	color: #003569;
+}
+
+.footer__copyright{
+	color: #999;
+}
