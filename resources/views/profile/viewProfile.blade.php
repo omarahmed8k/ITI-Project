@@ -14,7 +14,7 @@
 
                     <div class="profileUsername">
                         <p>omarahmed8k</p>
-                        <a href="{{url('/')}}"><i class="fas fa-cog"></i> Edit Profile</a>
+                        <a href="{{url('/edit')}}"><i class="fas fa-cog"></i> Edit Profile</a>
                     </div>
 
                     <ul class="profileCounter">
@@ -22,12 +22,12 @@
                             <strong>24</strong> posts
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{url('/followers')}}">
                                 <strong>191</strong> followers
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{url('/following')}}">
                                 <strong>111</strong> following
                             </a>
                         </li>

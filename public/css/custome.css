@@ -1,5 +1,15 @@
 /* All Css Will Be Here Like The Following */
 
+/* General Css */
+
+a {
+    text-decoration: unset !important;
+}
+
+ul {
+    padding: 0 !important;
+}
+
 /* ! Navbar */
 
 .navbar .nav-item .nav-img {
@@ -194,4 +204,75 @@
 .addPost.was-validated .custom-file-input:invalid ~ .custom-file-label,
 .addPost .custom-file-input.is-invalid ~ .custom-file-label {
     border-color: #ced4da;
+}
+
+/* ! Following - Followers Page */
+
+.followersCard {
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #00000020;
+}
+
+.followersCard ul {
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.followersCard ul li {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.followersCard ul li img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+.followersLink {
+    margin-right: auto;
+}
+
+.followersLink .id {
+    text-align: left;
+    margin-right: auto;
+    margin-left: 15px;
+    color: #999;
+}
+
+.followersLink .name {
+    text-align: left;
+    margin-right: auto;
+    margin-left: 15px;
+    display: block;
+    font-weight: 600;
+}
+
+.followersBtn {
+    color: white !important;
+    background-color: #3897f0;
+    border: 0;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.followersBtn.unFollow {
+    background-color: #b32e2e;
+}
+
+.followersBtn:active {
+    opacity: 0.8;
+}
+
+.followersBtn:focus {
+    outline: none;
 }
