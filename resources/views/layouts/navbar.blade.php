@@ -18,12 +18,24 @@
     <link href="{{ asset('css/custome.css') }}" rel="stylesheet">
 </head>
 
-
 <body>
     <div id="app">
 
         <nav class="navbar navbar-expand navbar-light border">
             <div class="container">
+                @guest
+                <div class="logo">
+                    <a class="navbar-brand" href="{{ url('/home') }}"><img src="{{asset('img/instagram.png')}}" alt="instagram-logo" /></a>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="{{ url('/register') }}">Register</a>
+                    </li>
+                </ul>
+                @else
                 <div class="logo">
                     <a class="navbar-brand" href="{{ url('/home') }}"><img src="{{asset('img/instagram.png')}}" alt="instagram-logo" /></a>
                 </div>
@@ -47,6 +59,7 @@
                         </form>
                     </li>
                 </ul>
+                @endguest
             </div>
         </nav>
 

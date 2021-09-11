@@ -20,6 +20,10 @@ Route::get('/tags', function () {
 
 // Profile
 
+Route::get('/data', function () {
+    return view('profile.addProfileData');
+})->middleware('auth');
+
 Route::get('/profile', function () {
     return view('profile.viewProfile');
 })->middleware('auth');
