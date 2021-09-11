@@ -32,10 +32,13 @@
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/home') }}"><i class="fas fa-home fa-lg"></i></a>
+                        <a class="nav-link" href="{{ url('/add') }}"><i class="fas fa-plus-circle fa-lg"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ml-2" href="{{ url('/profile') }}"><img class="nav-img" src="{{asset('img/user.png')}}" alt="user-image" /></a>
+                        <a class="nav-link mx-2" href="{{ url('/home') }}"><i class="fas fa-home fa-lg"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/profile') }}"><img class="nav-img" src="{{asset('img/user.png')}}" alt="user-image" /></a>
                     </li>
                 </ul>
             </div>

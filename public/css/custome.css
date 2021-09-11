@@ -182,3 +182,16 @@
         margin-bottom: 15px;
     }
 }
+
+/* ! Add Post */
+
+.addPost label span {
+    color: red;
+}
+
+.addPost .was-validated .form-control:invalid,
+.addPost .form-control.is-invalid,
+.addPost.was-validated .custom-file-input:invalid ~ .custom-file-label,
+.addPost .custom-file-input.is-invalid ~ .custom-file-label {
+    border-color: #ced4da;
+}
