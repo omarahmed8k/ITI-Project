@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/profile', function () {
+    return view('profile.viewProfile');
+});
+Route::get('/add', function () {
+    return view('post.addPost');
+});
 
 Auth::routes();
 

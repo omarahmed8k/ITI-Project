@@ -1,0 +1,184 @@
+/* All Css Will Be Here Like The Following */
+
+/* ! Navbar */
+
+.navbar .nav-item .nav-img {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+/* ! Login */
+
+/* ! Register */
+
+/* ! Reset Password */
+
+/* ! Profile */
+
+.topProfile {
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: center;
+}
+.profileImg {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 35px;
+}
+.profileImg img {
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+}
+
+.profileUsername {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profileUsername p {
+    font-size: 28px;
+    font-weight: 300;
+    color: #8e8e8e;
+    margin: 0;
+}
+
+.profileUsername a {
+    cursor: pointer;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #262626;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.profileCounter {
+    padding: 0;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.profileCounter li {
+    list-style: none;
+    color: #262626;
+    margin-right: 35px;
+    font-size: 16px;
+}
+
+.profileCounter li a {
+    text-decoration: none;
+    color: #262626;
+}
+
+.profileName {
+    margin-bottom: 20px;
+}
+.profileName p {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 600;
+    color: #262626;
+}
+
+.profileBio {
+    max-width: 370px;
+}
+
+.profileBio p {
+    margin: 0;
+}
+
+.bottomProfile .nav {
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.bottomProfile .nav .nav-item {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.bottomProfile .profilePost {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    margin: 15px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #0000001f;
+    line-height: 0;
+    text-decoration: unset;
+    display: block;
+}
+
+.bottomProfile .profilePost:hover.profilePost::after {
+    content: "\f004";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    display: flex;
+    z-index: 9999;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    font-size: 35px;
+    align-items: center;
+    justify-content: center;
+}
+.bottomProfile .profilePost:hover.profilePost::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #00000090;
+}
+
+@media (max-width: 1199px) {
+    .bottomProfile .profilePost {
+        width: 290px;
+    }
+}
+
+@media (max-width: 576px) {
+    .profileImg {
+        height: 85px;
+        width: 85px;
+        margin-right: 20px;
+    }
+    .profileUsername p {
+        font-size: 14px;
+    }
+    .profileUsername a {
+        margin-left: 10px;
+        font-size: 9px;
+    }
+    .profileCounter li {
+        margin-right: 20px;
+        font-size: 10px;
+    }
+    .profileName p {
+        font-size: 10px;
+    }
+    .profileBio {
+        max-width: 100%;
+    }
+    .profileBio p {
+        font-size: 10px;
+    }
+    .profileName,
+    .profileCounter,
+    .profileUsername {
+        margin-bottom: 15px;
+    }
+}
