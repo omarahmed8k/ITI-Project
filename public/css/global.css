@@ -1,0 +1,35 @@
+/* To set the global font environment */
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size:14px;
+    background-color: #FAFAFA;
+}
+
+main, footer{
+	max-width: 1000px;
+}
+
+a {
+	color:#003569;
+}
+<<<<<<< HEAD
+
+main{
+	margin-top: ;
+	animation: 0.5s fadeMain linear;
+}
+
+@keyframes fadeMain{
+	from{
+		transform: translateY(-10px);
+		opacity:0;
+	}
+
+	to{
+		transform: none;
+		opacity:1;
+	}
+}
+=======
+>>>>>>> master

@@ -1,0 +1,40 @@
+.navigation{
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	border-bottom: 1px solid #e6e6e6;
+	height: 77px;
+	padding: 0 47px;
+	box-sizing: border-box;
+}
+
+.navigation__column input{
+    width:215px;
+    padding:7px 0;
+    padding-left: 35px;
+    box-sizing: border-box;
+    border:0;
+    border:1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #FAFAFA;
+    position:relative;
+}
+
+.fa-search{
+	position: absolute;
+	color:#BABBBE;
+	font-size: 12px;
+	padding-left: 14px;
+	padding-top: 31px;
+	top:0;
+	z-index:2; /*icon is behind the search, so deal with layers -- higher z-index means front*/
+}
+
+/*three icons on the right*/
+.navigation__link{
+    font-size: 28px;
+    color:black;
+    margin-left:30px;
+}
