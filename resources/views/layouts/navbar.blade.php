@@ -6,10 +6,11 @@
     <meta description = "Instaclone Login">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
   <!-- images/favicon.ico -->
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Instagram</title>
 
     <script src="{{ asset('js/all.min.js') }}" defer></script>
@@ -68,6 +69,7 @@
             </div>
         </nav>
     </div>
+    @yield('postcontent')
     <main id="feed">
         @yield('content')
 

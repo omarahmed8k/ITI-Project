@@ -53,6 +53,8 @@ Route::get('/post', function () {
 })->middleware('auth');
 
 
+
+
 // --------------
 
 // Auth (Register - Login - Forget Password)
