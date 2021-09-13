@@ -1,5 +1,4 @@
 @extends('layouts.navbar')
-
 @section('content')
 <div class="container tagsPage">
     <div class="row">
