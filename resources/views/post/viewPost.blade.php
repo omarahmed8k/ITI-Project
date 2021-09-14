@@ -6,50 +6,50 @@
         <div class="col-md-12">
             <div class="postPage">
                 <div class="img">
-                    <img class="img-fluid" src="{{asset('../img/omarrr.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('../img/acpc.jpeg')}}" alt="">
                 </div>
                 <div class="details">
-                    <a class="owner" href="{{ url('/profile') }}"><img src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed</span></a>
+                    <a class="owner" href="{{ url('/profile') }}"><img src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed</span></a>
                     <div class="comments-container">
                         <div class="caption">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                         <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                         <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                         <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                         <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                         <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                         <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                         <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                         <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                         <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed. </span></a>
-                            <span> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
+                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
                         </div>
                     </div>
                     <div class="features">

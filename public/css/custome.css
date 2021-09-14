@@ -359,6 +359,7 @@ ul {
 
 .postAddComment textarea {
     padding: 5px;
+    resize: none;
     width: 90%;
     background: transparent;
     border: unset;
@@ -412,6 +413,11 @@ ul {
     width: 100%;
     border-bottom: 1px solid #eee;
 }
+
+.postPage .details .comment .text-muted {
+    font-size: 12px;
+}
+
 .postPage .details .comment {
     display: block;
     padding: 10px;
@@ -462,6 +468,7 @@ ul {
 }
 .postPage .add-comment textarea {
     padding: 5px;
+    resize: none;
     width: 90%;
     background: transparent;
     border: unset;
