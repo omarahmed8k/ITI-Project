@@ -1,5 +1,5 @@
-const icons = document.querySelector(".postFeatures .postLike").childNodes;
+// const icons = document.querySelector(".postFeatures .postLike").childNodes;
 
-function fill() {
-    icons[0].setAttribute("data-prefix", "fas");
-}
+// function fill() {
+//     icons[0].setAttribute("data-prefix", "fas");
+// }

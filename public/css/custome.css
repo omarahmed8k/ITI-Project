@@ -2,6 +2,16 @@
 
 /* ! General Css */
 
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #a7a7a7;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+
 a {
     text-decoration: unset !important;
 }
@@ -355,4 +365,134 @@ ul {
     outline: unset;
     height: 45px;
     overflow: auto;
+}
+.postPage {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0px 3px 5px #00000015;
+    border: 2px solid #eee;
+    border-radius: 5px;
+}
+.postPage .img {
+    width: 65%;
+}
+.postPage .details {
+    position: relative;
+    width: 35%;
+}
+.postPage .details .owner {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.postPage .details a img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.postPage .details a span {
+    color: #121212;
+    font-weight: 900;
+    padding-left: 10px;
+}
+.postPage .details .comments-container {
+    position: absolute;
+    top: 46px;
+    width: 100%;
+    height: calc(100% - 191px);
+    overflow: auto;
+}
+.postPage .details .caption {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+.postPage .details .comment {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid #eeeeee50;
+}
+
+.postPage .features {
+    position: absolute;
+    bottom: 65px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+
+.postPage .features ul {
+    display: flex;
+    justify-content: space-between;
+    line-height: 0;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.postPage .features ul li {
+    font-size: 25px;
+}
+
+.postPage .features ul li a {
+    color: #999;
+}
+
+.postPage .features .likes {
+    width: 100%;
+    font-weight: 900;
+}
+
+.postPage .add-comment {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.postPage .add-comment textarea {
+    padding: 5px;
+    width: 90%;
+    background: transparent;
+    border: unset;
+    outline: unset;
+    height: 45px;
+    overflow: auto;
+}
+@media (max-width: 767px) {
+    .postPage {
+        flex-direction: column;
+        position: relative;
+    }
+    .postPage .img,
+    .postPage .details {
+        width: 100%;
+    }
+    .postPage .details .owner,
+    .postPage .details .comments-container,
+    .postPage .add-comment,
+    .postPage .details .features {
+        position: relative;
+        top: unset;
+        bottom: unset;
+    }
+    .postPage .details {
+        position: unset;
+    }
+    .postPage .details .owner {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        background: #fff;
+    }
 }

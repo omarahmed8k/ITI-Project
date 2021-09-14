@@ -67,13 +67,13 @@
 
                         <div class="row">
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a class="profilePost" href="#"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}" alt=""></a>
+                                <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}" alt=""></a>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a class="profilePost" href="#"><img class="img-fluid" src="{{asset('img/Omar.jpg')}}" alt=""></a>
+                                <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid" src="{{asset('img/Omar.jpg')}}" alt=""></a>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a class="profilePost" href="#"><img class="img-fluid" src="{{asset('img/omarr.jpg')}}" alt=""></a>
+                                <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid" src="{{asset('img/omarr.jpg')}}" alt=""></a>
                             </div>
                         </div>
 
@@ -83,13 +83,13 @@
 
                         <div class="row">
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a class="profilePost" href="#"><img class="img-fluid" src="{{asset('img/omarface.jpg')}}" alt=""></a>
+                                <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid" src="{{asset('img/omarface.jpg')}}" alt=""></a>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a class="profilePost" href="#"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}" alt=""></a>
+                                <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid" src="{{asset('img/omarrr.jpg')}}" alt=""></a>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                <a class="profilePost" href="#"><img class="img-fluid" src="{{asset('img/tlb.png')}}" alt=""></a>
+                                <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid" src="{{asset('img/tlb.png')}}" alt=""></a>
                             </div>
                         </div>
 
