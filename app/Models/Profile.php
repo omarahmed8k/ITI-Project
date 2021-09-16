@@ -9,4 +9,9 @@ class Profile extends Model
 {
     use HasFactory;
     protected $table ='profiles';
+    protected $fillable = [
+        'user_id',
+        'bio',
+        'website',
+    ];
 }
