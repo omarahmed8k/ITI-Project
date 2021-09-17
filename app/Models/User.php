@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -32,8 +33,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
     public function sendEmailVerificationNotification()
     {
         $this->notify(new VerifyEmailQueued);
+    }
+    
+    public function followers() {
+        return $this->belongsToMany(User::class, 'user_followers', 'user_id', 'follower_id');
+    }
+
+    public function following() {
+        return $this->belongsToMany(User::class, 'user_followers', 'follower_id', 'user_id');
+
     }
 }

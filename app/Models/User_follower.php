@@ -9,4 +9,6 @@ class User_follower extends Model
 {
     use HasFactory;
     protected $table ='user_followers';
+
+
 }

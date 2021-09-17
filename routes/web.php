@@ -32,13 +32,10 @@ Route::get('/profile', function () {
 Route::get('/edit', [EditController::class, 'showedit'])->name('edit.data.get');
 Route::post('/edit', [EditController::class, 'editData'])->name('edit.data');
 
-Route::get('/followers', function () {
-    return view('profile.followersPage');
-})->middleware('auth');
 
-Route::get('/following', function () {
-    return view('profile.followingPage');
-})->middleware('auth');
+Route::get('/followers', 'App\Http\Controllers\Profile\FollowersController@index')->middleware('auth')->name('followers.index');
+
+Route::get('/following', 'App\Http\Controllers\Profile\FollowingController@index')->middleware('auth')->name('following.index');
 
 // --------------
 

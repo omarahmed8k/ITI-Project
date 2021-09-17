@@ -9,45 +9,16 @@
         <div class="col-md-6">
             <div class="followersCard">
                 <ul>
-                    <li>
-                        <img src="{{asset('img/user.png')}}" />
-                        <a href="{{url('/profile')}}" class="followersLink">
-                            <span class="name">Omar Abdelrahman</span>
-                            <span class="id">omarahmed8k</span>
-                        </a>
-                        <a href="{{url('/profile')}}" class="followersBtn unFollow" type="button">Unfollow</a>
-                    </li>
-                    <li>
-                        <img src="{{asset('img/user.png')}}" />
-                        <a href="{{url('/profile')}}" class="followersLink">
-                            <span class="name">Omar Abdelrahman</span>
-                            <span class="id">omarahmed8k</span>
-                        </a>
-                        <a href="{{url('/profile')}}" class="followersBtn unFollow" type="button">Unfollow</a>
-                    </li>
-                    <li>
-                        <img src="{{asset('img/user.png')}}" />
-                        <a href="{{url('/profile')}}" class="followersLink">
-                            <span class="name">Omar Abdelrahman</span>
-                            <span class="id">omarahmed8k</span>
-                        </a>
-                        <a href="{{url('/profile')}}" class="followersBtn unFollow" type="button">Unfollow</a>
-                    </li>
-                    <li>
-                        <img src="{{asset('img/user.png')}}" />
-                        <a href="{{url('/profile')}}" class="followersLink">
-                            <span class="name">Omar Abdelrahman</span>
-                            <span class="id">omarahmed8k</span>
-                        </a>
-                        <a href="{{url('/profile')}}" class="followersBtn unFollow" type="button">Unfollow</a>
-                    </li>
-                    <li>
-                        <img src="{{asset('img/user.png')}}" />
-                        <a href="{{url('/profile')}}" class="followersLink">
-                            <span class="name">Omar Abdelrahman</span>
-                            <span class="id">omarahmed8k</span>
-                        </a>
-                        <a href="{{url('/profile')}}" class="followersBtn unFollow" type="button">Unfollow</a>
+                  @foreach($users as $user)
+                        <li>
+                            <img src="{{asset('img/user.png')}}" />
+                            <a href="{{url('/profile')}}" class="followersLink">
+                                <span class="name">{{ $user->name }}</span>
+                                <span class="id">{{ $user->username }}</span>
+                            </a>
+                            <a href="{{url('/profile')}}" class="followersBtn unFollow" type="button">Unfollow</a>
+                        </li>
+                  @endforeach
                     </li>
                 </ul>
             </div>
