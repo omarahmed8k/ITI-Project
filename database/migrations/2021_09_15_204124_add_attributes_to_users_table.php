@@ -17,10 +17,9 @@ class AddAttributesToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('username');
             $table->string('phone')->nullable();
-            $table->enum('gender', ['male', 'female']);
-            $table->string('avatar');
+            $table->enum('gender', ['male', 'female'])->nullable();
+            $table->string('avatar')->nullable();
         });
-
     }
 
     /**

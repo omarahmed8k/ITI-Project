@@ -13,43 +13,24 @@
                     <div class="comments-container">
                         <div class="caption">
                             <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <p class="m-0">
+                                <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            </p>
+                            <span class="time">10:00 PM</span>
                         </div>
                         <div class="comment">
                             <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <p class="m-0">
+                                <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            </p>
+                            <span class="time">10:00 PM</span>
                         </div>
                         <div class="comment">
                             <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
-                        </div>
-                        <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
-                        </div>
-                        <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
-                        </div>
-                        <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
-                        </div>
-                        <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
-                        </div>
-                        <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
-                        </div>
-                        <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
-                        </div>
-                        <div class="comment">
-                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>Ali Mohamed. </span></a>
-                            <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            <p class="m-0">
+                                <span class="text-muted"> Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter Winnter </span>
+                            </p>
+                            <span class="time">10:00 PM</span>
                         </div>
                     </div>
                     <div class="features">

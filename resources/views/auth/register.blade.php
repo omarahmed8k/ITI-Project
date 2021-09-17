@@ -11,7 +11,7 @@
 
                         <div class="row">
                             <div class="col-md-12 mb-4 text-center">
-                                <img class="img-fluid" src="{{asset('img/instagram.png')}}" alt="">
+                                <img class="img-fluid" src="{{asset('img/instagram.png')}}">
                             </div>
                         </div>
 
@@ -29,9 +29,9 @@
 
                         <div class="form-group row justify-content-center">
                             <div class="col-md-10">
-                                <input placeholder="Username" id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="name" value="{{ old('username') }}" required autocomplete="name" autofocus>
+                                <input placeholder="Username" id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
-                                @error('name')
+                                @error('username')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -41,19 +41,7 @@
 
                         <div class="form-group row justify-content-center">
                             <div class="col-md-10">
-                                <input placeholder="Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row justify-content-center">
-                            <div class="col-md-10">
-                                <input placeholder="Phone" id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="name" autofocus>
+                                <input placeholder="Phone" id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">
@@ -65,7 +53,19 @@
 
                         <div class="form-group row justify-content-center">
                             <div class="col-md-10">
-                                <input placeholder="Pasword" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input placeholder="Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-10">
+                                <input placeholder="Pasword" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" autofocus>
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -77,7 +77,7 @@
 
                         <div class="form-group row justify-content-center">
                             <div class="col-md-10">
-                                <input placeholder="Confirem Password" id="password-confirm" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
+                                <input placeholder="Confirem Password" id="password-confirm" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password" autofocus>
 
                                 @error('password_confirmation')
                                 <span class="invalid-feedback" role="alert">
@@ -95,6 +95,7 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

@@ -28,14 +28,20 @@ class AddDataController extends Controller
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        $user = Auth::user();
+        $userId=$user->id;
 
          $imageName = time().'.'.$request->image->extension();
 
-        $request->image->move(public_path('img'), $imageName);
+        //$request->image->move(public_path('img'), $imageName);
+
 
         /* Store $imageName name in DATABASE from HERE */
-        $user = Auth::user();
-        $userId=$user->id;
+
+        $folderName='user'.$userId;
+        //File::makeDirectory("storage\app\public");
+        $path = public_path($folderName);
+        $request->image->move(public_path($folderName), $imageName);
         Profile::where('user_id',$userId)->delete();
          Profile::create([
            'user_id'=>$user->id,
