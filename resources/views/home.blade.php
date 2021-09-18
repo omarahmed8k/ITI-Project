@@ -13,7 +13,7 @@
 
             <div class="homePost d-flex flex-column">
 				<div class="postOwner">
-					<a href="{{ url('/profile') }}"><img src="{{ asset('uploads/avatar/'.$item->user->avatar) }}"><span> {{ $item->user->username }}</span></a>
+					<a href="{{ url('/profile') }}"><img src="{{ asset('img/acpc.jpeg') }}"><span> {{ $item->user->username }}</span></a>
 				</div>
 				<div class="postImg">
 					<img src="{{ asset('uploads/post/'.$item->image) }}" width="725px" Height="600px"  balt="pic">
