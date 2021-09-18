@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -38,7 +39,7 @@ class User extends Authenticatable
     {
         $this->notify(new VerifyEmailQueued);
     }
-    
+
     public function followers() {
         return $this->belongsToMany(User::class, 'user_followers', 'user_id', 'follower_id');
     }
@@ -46,5 +47,10 @@ class User extends Authenticatable
     public function following() {
         return $this->belongsToMany(User::class, 'user_followers', 'follower_id', 'user_id');
 
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
     }
 }

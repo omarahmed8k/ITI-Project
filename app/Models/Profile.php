@@ -14,4 +14,9 @@ class Profile extends Model
         'bio',
         'website',
     ];
+
+    public function userr(){
+
+        return $this->belongsTo(User::class);
+    }
 }

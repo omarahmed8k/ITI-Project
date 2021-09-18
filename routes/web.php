@@ -22,19 +22,10 @@ Route::get('/tags', function () {
 
 // Profile
 
-Route::get('/profile', function () {
-    return view('profile.viewProfile');
-})->middleware('auth');
-
-// Route::get('/edit', function () {
-//     return view('profile.editProfile');
-// })->middleware('auth');
-Route::get('/edit', [EditController::class, 'showedit'])->name('edit.data.get');
-Route::post('/edit', [EditController::class, 'editData'])->name('edit.data');
-
-
+Route::get('/profile','App\Http\Controllers\Profile\ViewController@index' )->middleware('auth')->name('profile.index');
+Route::get('/edit', [EditController::class, 'showedit'])->name('edit.data.get')->middleware('auth');
+Route::post('/edit', [EditController::class, 'editData'])->name('edit.data')->middleware('auth');
 Route::get('/followers', 'App\Http\Controllers\Profile\FollowersController@index')->middleware('auth')->name('followers.index');
-
 Route::get('/following', 'App\Http\Controllers\Profile\FollowingController@index')->middleware('auth')->name('following.index');
 
 // --------------
