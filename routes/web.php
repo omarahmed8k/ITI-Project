@@ -6,6 +6,7 @@ use App\Http\Controllers\Post\CreateController;
 use App\Http\Controllers\Post\StoreController;
 use App\Http\Controllers\Profile\AddDataController;
 use App\Http\Controllers\Profile\EditController;
+use App\Http\Controllers\ExploreController;
 // Home
 
 Route::get('/', function () {
@@ -16,6 +17,8 @@ Route::get('/', function () {
 
 // Tags
 
+Route::get('/explore', [ExploreController::class, 'explore'])->middleware('auth');
+
 Route::get('/tags', function () {
     return view('tags');
 })->middleware('auth');
@@ -24,7 +27,7 @@ Route::get('/tags', function () {
 
 // Profile
 
-Route::get('/profile','App\Http\Controllers\Profile\ViewController@index' )->middleware('auth')->name('profile.index');
+Route::get('/profile', 'App\Http\Controllers\Profile\ViewController@index')->middleware('auth')->name('profile.index');
 Route::get('/edit', [EditController::class, 'showedit'])->name('edit.data.get')->middleware('auth');
 Route::post('/edit', [EditController::class, 'editData'])->name('edit.data')->middleware('auth');
 Route::get('/followers', 'App\Http\Controllers\Profile\FollowersController@index')->middleware('auth')->name('followers.index');
@@ -34,8 +37,8 @@ Route::get('/following', 'App\Http\Controllers\Profile\FollowingController@index
 
 // Post
 
-Route::get('add-posts', [CreateController::class,'create'])->middleware('auth');
-Route::post('add-posts', [StoreController::class,'store'])->middleware('auth');
+Route::get('add-posts', [CreateController::class, 'create'])->middleware('auth');
+Route::post('add-posts', [StoreController::class, 'store'])->middleware('auth');
 
 
 

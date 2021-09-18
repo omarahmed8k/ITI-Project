@@ -66,7 +66,12 @@
         </nav>
     </div>
     <main class="py-5">
+        @auth
+        <a class="exploreNav" href="{{url('/explore')}}">Explore</a>
+        @endauth
+
         @yield('content')
+
     </main>
 </body>
 
