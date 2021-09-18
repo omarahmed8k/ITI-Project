@@ -5,12 +5,18 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 
-			<div class="homePost d-flex flex-column">
+
+            @foreach ($posts as $item)
+
+
+
+
+            <div class="homePost d-flex flex-column">
 				<div class="postOwner">
-					<a href="{{ url('/profile') }}"><img src="{{asset('img/omarrr.jpg')}}"><span>Ali Mohamed</span></a>
+					<a href="{{ url('/profile') }}"><img src="{{ asset('uploads/avatar/'.$item->user->avatar) }}"><span> {{ $item->user->username }}</span></a>
 				</div>
 				<div class="postImg">
-					<img class="img-fluid" src="{{asset('img/omarrr.jpg')}}">
+					<img src="{{ asset('uploads/post/'.$item->image) }}" width="725px" Height="600px"  balt="pic">
 				</div>
 				<div class="postFeatures">
 					<ul>
@@ -24,33 +30,33 @@
 						300 likes
 					</div>
 					<div class="postCaption">
-						<a class="font-weight-bold d-block w-100" href="{{url('/profile')}}"> omarahmed8k </a>
+						<a class="font-weight-bold d-block w-100" href="{{url('/profile')}}"> {{ $item->user_name }} </a>
 						<p class="m-0">
-							Kalam Gamed 2021
+							{{ $item->caption }}
 						</p>
-						<span class="time">10:00 AM</span>
 					</div>
 				</div>
 				<span class="text-muted px-2">Comments</span>
-				<div class="postComments">
-					<a class="pl-3 pr-1 font-weight-bold" href="{{url('/profile')}}"> mosalah </a>
-					<p class="pl-3 pr-1 pb-2 m-0">
-						Kalam Gamed 2030
-					</p>
-					<span class="time">10:00 AM</span>
-				</div>
-				<div class="postComments">
-					<a class="pl-3 pr-1 font-weight-bold" href="{{url('/profile')}}"> alimo50 </a>
-					<p class="pl-3 pr-1 pb-2 m-0">
-						Kalam Gamed 2025
-					</p>
-					<span class="time">10:00 AM</span>
-				</div>
+                @foreach ($comments as $item1)
+                    @if ($item->id == $item1->post_id)
+                        <div class="postComments">
+                            <a class="pl-3 pr-1 font-weight-bold" href="{{url('/profile')}}"> {{ $item1->user->username }} </a>
+                            <p class="pl-3 pr-1 pb-2 m-0">
+                              {{$item1->comment}}
+                            </p>
+                        </div>
+                    @endif
+                @endforeach
+
 				<div class="postAddComment">
 					<textarea placeholder="Comment" name="comment"></textarea>
 					<a class="font-weight-bold pr-1" href="#">Post</a>
 				</div>
 			</div>
+
+
+            @endforeach
+
 
 		</div>
 	</div>

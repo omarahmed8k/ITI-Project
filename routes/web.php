@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SendMailController;
+use App\Http\Controllers\Post\CreateController;
+use App\Http\Controllers\Post\StoreController;
 use App\Http\Controllers\Profile\AddDataController;
 use App\Http\Controllers\Profile\EditController;
 // Home
@@ -32,9 +34,10 @@ Route::get('/following', 'App\Http\Controllers\Profile\FollowingController@index
 
 // Post
 
-Route::get('/add', function () {
-    return view('post.addPost');
-})->middleware('auth');
+Route::get('add-posts', [CreateController::class,'create'])->middleware('auth');
+Route::post('add-posts', [StoreController::class,'store'])->middleware('auth');
+
+
 
 Route::get('/post', function () {
     return view('post.viewPost');

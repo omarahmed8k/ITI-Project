@@ -46,7 +46,7 @@
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/add') }}"><i class="fas fa-plus-circle fa-lg"></i></a>
+                        <a class="nav-link" href="{{ url('/add-posts') }}"><i class="fas fa-plus-circle fa-lg"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-2" href="{{ url('/home') }}"><i class="fas fa-home fa-lg"></i></a>

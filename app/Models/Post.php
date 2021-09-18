@@ -9,5 +9,21 @@ class Post extends Model
 {
     use HasFactory;
     protected $table ='posts';
+    protected $fillable=[
+        'caption',
+        'user_id',
+        'image',
+        'created_at',
+        'updated_at'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
 }
