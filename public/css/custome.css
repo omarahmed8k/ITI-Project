@@ -159,7 +159,9 @@ ul {
     box-shadow: 0px 0px 5px #0000001f;
     line-height: 0;
     text-decoration: unset;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media (max-width: 767px) {
     .profilePost {
@@ -324,6 +326,11 @@ ul {
     box-shadow: 0px 3px 5px #00000015;
     border: 2px solid #eee;
     margin-bottom: 30px;
+}
+.homePost .postImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .postOwner {
@@ -533,6 +540,7 @@ ul {
     .postPage {
         flex-direction: column;
         position: relative;
+        padding-top: 46px;
     }
     .postPage .img,
     .postPage .details {
