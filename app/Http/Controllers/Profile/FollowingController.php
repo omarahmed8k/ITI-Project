@@ -20,4 +20,13 @@ class FollowingController extends Controller
         $users = User::find($id)->following;
         return view('profile.followingPage')->with('users',$users);
     }
+
+    public function unfollow($id)
+    {
+
+        $follower =Auth::user();
+        $user = User::find($id);
+        $user->followers()->detach($follower);
+        return redirect()->route('following.index');
+    }
 }

@@ -27,8 +27,17 @@ Route::get('/tags', function () {
 Route::get('/profile','App\Http\Controllers\Profile\ViewController@index' )->middleware('auth')->name('profile.index');
 Route::get('/edit', [EditController::class, 'showedit'])->name('edit.data.get')->middleware('auth');
 Route::post('/edit', [EditController::class, 'editData'])->name('edit.data')->middleware('auth');
+
+//followers
+
 Route::get('/followers', 'App\Http\Controllers\Profile\FollowersController@index')->middleware('auth')->name('followers.index');
+Route::post('/follow/{id}', 'App\Http\Controllers\Profile\FollowersController@follow')->middleware('auth')->name('followers.follow');
+Route::delete('/unfollow/{id}', 'App\Http\Controllers\Profile\FollowersController@unfollow')->middleware('auth')->name('followers.unfollow');
+
+//following
+
 Route::get('/following', 'App\Http\Controllers\Profile\FollowingController@index')->middleware('auth')->name('following.index');
+Route::delete('/unfollowFollowing/{id}', 'App\Http\Controllers\Profile\FollowingController@unfollow')->middleware('auth')->name('following.unfollow');
 
 // --------------
 

@@ -17,11 +17,49 @@ class FollowersController extends Controller
         $this->middleware('auth');
     }
 
+
+
     public function index()
     {
 
         $id = Auth::id();
-       $users = User::find($id)->followers;
-        return view('profile.followersPage')->with('users',$users);
+        $followers = User::find($id)->followers;
+        $user = User::findOrFail($id);
+
+
+        foreach ($followers as $follower) {
+
+            $checkUser = User::findOrFail($follower->id);
+
+            if ($user->isFollowing($checkUser)) {
+
+                $follower->relation = true;
+            } else {
+
+                $follower->relation = false;
+            }
+
+        }
+
+
+        return view('profile.followersPage')->with('followers', $followers);
+    }
+
+    public function follow($id)
+    {
+        $follower= Auth::user();
+        $user = User::find($id);
+        $user->followers()->attach($follower);
+        return redirect()->route('followers.index');
+
+    }
+
+    public function unfollow($id)
+    {
+
+        $follower =Auth::user();
+        $user = User::find($id);
+        $user->followers()->detach($follower);
+        return redirect()->route('followers.index');
     }
 }

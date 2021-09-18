@@ -41,12 +41,12 @@
 
                         <div class="profileBio">
                             <p>
-                                {{ $profile->bio }}
+                                {{ $profile->bio ?? 'nothing' }}
                             </p>
                         </div>
 
                         <div class="profileWebsite">
-                          <a href=" ">{{ $profile->website }}</a>
+                          <a href=" ">{{ $profile->website ?? 'nothing' }}</a>
                         </div>
 
                     </div>

@@ -9,14 +9,27 @@
             <div class="col-md-6">
                 <div class="followersCard">
                     <ul>
-                        @foreach($users as $user)
+                        @foreach($followers as $follower)
                             <li>
-                                <img src="{{asset('img/user.png')}}" />
+                                <img src="{{asset('img/user.png')}}"/>
                                 <a href="{{url('/profile')}}" class="followersLink">
-                                    <span class="name">{{ $user->name }}</span>
-                                    <span class="id">{{ $user->username }}</span>
+                                    <span class="name">{{ $follower->name }}</span>
+                                    <span class="id">{{ $follower->username }}</span>
                                 </a>
-                                <a href="{{url('/profile')}}" class="followersBtn" type="button">Follow Back</a>
+                                @if($follower->relation)
+                                    <form action="{{ route('followers.unfollow', $follower->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input class="followersBtn unFollow" type="submit" value="Unfollow">
+                                    </form>
+                                @else
+                                    <form action="{{ route('followers.follow', $follower->id) }}" method="POST">
+                                        @csrf
+                                        <input class="followersBtn" type="submit" value="Follow Back">
+                                    </form>
+
+                                @endif
+
                             </li>
                         @endforeach
                     </ul>
