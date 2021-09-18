@@ -6,17 +6,14 @@
 		<div class="col-md-8">
 
 
-            @foreach ($posts as $item)
+			@foreach ($posts as $item)
 
-
-
-
-            <div class="homePost d-flex flex-column">
+			<div class="homePost d-flex flex-column">
 				<div class="postOwner">
 					<a href="{{ url('/profile') }}"><img src="{{ asset('img/acpc.jpeg') }}"><span> {{ $item->user->username }}</span></a>
 				</div>
 				<div class="postImg">
-					<img src="{{ asset('uploads/post/'.$item->image) }}" width="725px" Height="600px"  balt="pic">
+					<img class="img-fluid" src="{{ asset('uploads/post/'.$item->image) }}">
 				</div>
 				<div class="postFeatures">
 					<ul>
@@ -37,16 +34,16 @@
 					</div>
 				</div>
 				<span class="text-muted px-2">Comments</span>
-                @foreach ($comments as $item1)
-                    @if ($item->id == $item1->post_id)
-                        <div class="postComments">
-                            <a class="pl-3 pr-1 font-weight-bold" href="{{url('/profile')}}"> {{ $item1->user->username }} </a>
-                            <p class="pl-3 pr-1 pb-2 m-0">
-                              {{$item1->comment}}
-                            </p>
-                        </div>
-                    @endif
-                @endforeach
+				@foreach ($comments as $item1)
+				@if ($item->id == $item1->post_id)
+				<div class="postComments">
+					<a class="pl-3 pr-1 font-weight-bold" href="{{url('/profile')}}"> {{ $item1->user->username }} </a>
+					<p class="pl-3 pr-1 pb-2 m-0">
+						{{$item1->comment}}
+					</p>
+				</div>
+				@endif
+				@endforeach
 
 				<div class="postAddComment">
 					<textarea placeholder="Comment" name="comment"></textarea>
@@ -55,7 +52,7 @@
 			</div>
 
 
-            @endforeach
+			@endforeach
 
 
 		</div>

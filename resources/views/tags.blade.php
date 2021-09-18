@@ -2,7 +2,7 @@
 @section('content')
 <div class="container tagsPage">
     <div class="row">
-        <div class="col-md-12 my-4">
+        <div class="col-md-12 mb-4">
             <h4 class="display-4">#Summer</h4>
         </div>
 
