@@ -22,24 +22,21 @@ class HomeController extends Controller
     {
         $posts = Post::all()->sortDesc();
         $users = User::all();
-        $likes=Like::all();
+        $likes = Like::all();
         $comments = Comment::all();
-        $followers=User_follower::all();
-
-
+        $followers = User_follower::all();
 
 
         foreach ($posts as $post) {
-            if (isset($post->user->avatar)) {
-                $post->user->avatar = 'user' . $post->user->id . '/' . $post->user->avatar;
-            } else {
+            if ($post->user->avatar == 'user.png') {
                 $post->user->avatar = '/img/user.png';
+            } else {
+                $post->user->avatar = 'user' . $post->user->id . '/' . $post->user->avatar;
             }
         }
 
 
-
-        return view('home', compact('posts', 'users', 'comments','likes','followers'));
+        return view('home', compact('posts', 'users', 'comments', 'likes', 'followers'));
 
     }
 }

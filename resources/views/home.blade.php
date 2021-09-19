@@ -15,7 +15,7 @@
                         <div class="homePost d-flex flex-column">
                             <div class="postOwner">
                                 <a href="{{ url('/profile') }}"><img
-                                        src="{{ asset('user'.$item->user->id.'/'.$item->user->avatar ) }}"><span> {{ $item->user->username }}</span></a>
+                                        src="{{ asset( $item->user->avatar ) }}"><span> {{ $item->user->username }}</span></a>
                             </div>
                             <div class="postImg">
                                 <img class="img-fluid" src="{{ asset('uploads/post/'.$item->image) }}">
