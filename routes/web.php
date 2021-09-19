@@ -9,9 +9,7 @@ use App\Http\Controllers\Profile\EditController;
 use App\Http\Controllers\ExploreController;
 // Home
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('home');
 
 // --------------
 
@@ -65,7 +63,7 @@ Route::get('/post', function () {
 Auth::routes();
 // Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('home');
 
 // --------------
 
