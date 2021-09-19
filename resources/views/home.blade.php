@@ -31,7 +31,17 @@
                                     <li><a href="{{url('/post')}}"><i class="far fa-comment"></i></a></li>
                                 </ul>
                                 <ul class="ml-auto">
-                                    <li><a href="#"><i class="far fa-bookmark"></i></a></li>
+                                    <li>
+                                        <form  action="{{ url('save-post') }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" name="userID" value="{{ auth()->user()->id }}">
+                                            <input type="hidden" name="postID" value="{{ $item->id }}">
+
+                                            <button class="postLike" type="submit" ><i class="far fa-bookmark"></i></button>
+
+                                        </form>
+                                 </li>
+                                    
                                 </ul>
                                 <div class="postLikes">
                                 @php

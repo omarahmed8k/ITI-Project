@@ -6,6 +6,7 @@ use App\Http\Controllers\Post\CreateController;
 use App\Http\Controllers\Post\StoreController;
 use App\Http\Controllers\Post\CommentController;
 use App\Http\Controllers\Post\LikeController;
+use App\Http\Controllers\Post\SaveController;
 use App\Http\Controllers\Profile\AddDataController;
 use App\Http\Controllers\Profile\EditController;
 use App\Http\Controllers\ExploreController;
@@ -70,6 +71,10 @@ Route::post('add-comments', [CommentController::class, 'store'])->middleware('au
 //likes
 Route::get('add-likes', [LikeController::class, 'create'])->middleware('auth');
 Route::post('add-likes', [LikeController::class, 'store'])->middleware('auth');
+
+//save_posts
+Route::get('save-post', [SaveController::class, 'create'])->middleware('auth');
+Route::post('save-post', [SaveController::class, 'store'])->middleware('auth');
 
 
 //=======
