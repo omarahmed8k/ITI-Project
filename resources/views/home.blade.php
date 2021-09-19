@@ -7,7 +7,10 @@
 
                 @isset($posts)
                     @foreach ($posts as $item)
-
+                    @foreach($followers as $item5)
+                        @if($item->user_id == $item5->user_id && $item5->follower_id == auth()->user()->id)
+                        
+                    
                         <div class="homePost d-flex flex-column">
                             <div class="postOwner">
                                 <a href="{{ url('/profile') }}"><img
@@ -93,8 +96,10 @@
                                 </form>
                             </div>
                         </div>
+                        @break
+                        @endif
 
-
+                        @endforeach
                     @endforeach
                 @endisset
 

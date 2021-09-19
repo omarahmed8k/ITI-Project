@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Like;
+use App\Models\User_follower;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,7 @@ class HomeController extends Controller
         $users = User::all();
         $likes=Like::all();
         $comments = Comment::all();
+        $followers=User_follower::all();
 
 
 
@@ -37,7 +39,7 @@ class HomeController extends Controller
 
 
 
-        return view('home', compact('posts', 'users', 'comments','likes'));
+        return view('home', compact('posts', 'users', 'comments','likes','followers'));
 
     }
 }
