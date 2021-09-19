@@ -26,8 +26,7 @@ class LikeController extends Controller
                 return redirect()->route('home');
 
         }
-        else
-         {
+        else {
           $deletedPost= Like::where('post_id',$request->input('postID'))->delete();
           return redirect()->route('home');
         }
