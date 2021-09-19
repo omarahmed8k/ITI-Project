@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -29,6 +30,10 @@ class ViewController extends Controller
         $following = User::find($id)->following;
         $followingCount = $following->count();
 
-        return view('profile.viewProfile', ['user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount]);
+        $posts = User::find($id)->posts;
+        $postsCount = $posts->count();
+
+
+        return view('profile.viewProfile', ['user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount, 'posts' =>$posts,'postsCount'=>$postsCount]);
     }
 }
