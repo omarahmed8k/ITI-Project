@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::all()->sortDesc();
         $users = User::all();
         $likes=Like::all();
         $comments = Comment::all();

@@ -11,7 +11,7 @@
                         <div class="homePost d-flex flex-column">
                             <div class="postOwner">
                                 <a href="{{ url('/profile') }}"><img
-                                        src="{{ asset($item->user->avatar ) }}"><span> {{ $item->user->name }}</span></a>
+                                        src="{{ asset('user'.$item->user->id.'/'.$item->user->avatar ) }}"><span> {{ $item->user->username }}</span></a>
                             </div>
                             <div class="postImg">
                                 <img class="img-fluid" src="{{ asset('uploads/post/'.$item->image) }}">
@@ -28,7 +28,8 @@
 
                                  </form>
                                     </li>
-                                    <li><a href="{{url('/post')}}"><i class="far fa-comment"></i></a></li>
+                                    
+                                    <li><button onclick="window.location.href='/post/{{  $item->id; }}';" ><i class="far fa-comment"></i></button></li>
                                 </ul>
                                 <ul class="ml-auto">
                                     <li>
