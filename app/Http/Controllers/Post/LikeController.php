@@ -15,13 +15,22 @@ class LikeController extends Controller
     public function store(Request $request){
         
         $like = new Like;
-        $like->user_id=$request->input('userID');
-        $like->post_id=$request->input('postID');
+        //if(!(Like::where('post_id', '=',$request->input('postID'))->exists()))
+        //{
 
-        
-        $like ->save();
+                $like->user_id=$request->input('userID');
+                $like->post_id=$request->input('postID');
 
-        //return route('home');
-        return redirect()->route('home');
+                
+                $like ->save();
+                return redirect()->route('home');
+
+        //}
+       // else {
+         // $deletedPost= Like::where('post_id',$request->input('postID'))->delete();
+         // return redirect()->route('home');
+       // }
+
+
     }
 }

@@ -5,16 +5,17 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
 
+
                 @isset($posts)
                     @foreach ($posts as $item)
                     @foreach($followers as $item5)
-                        @if($item->user_id == $item5->user_id && $item5->follower_id == auth()->user()->id)
+                        @if( ($item->user_id == $item5->user_id && $item5->follower_id == auth()->user()->id) || ($item->user_id == auth()->user()->id))
 
 
                         <div class="homePost d-flex flex-column">
                             <div class="postOwner">
                                 <a href="{{ url('/profile') }}"><img
-                                        src="{{ asset('user'.$item->user->id.'/'.$item->user->avatar ) }}"><span> {{ $item->user->username }}</span></a>
+                                        src="{{ asset( $item->user->avatar ) }}"><span> {{ $item->user->username }}</span></a>
                             </div>
                             <div class="postImg">
                                 <img class="img-fluid" src="{{ asset('uploads/post/'.$item->image) }}">
@@ -29,10 +30,10 @@
 
                                     <button class="postLike" type="submit" ><i class="far fa-heart"></i></button>
 
-                                 </form>
+                                    </form>
                                     </li>
 
-                                    <li><button onclick="window.location.href='/post/{{  $item->id; }}';" ><i class="far fa-comment"></i></button></li>
+                                    <li><button onclick="window.location.href='/post/{{  $item->id }}';" ><i class="far fa-comment"></i></button></li>
                                 </ul>
                                 <ul class="ml-auto">
                                     <li>
@@ -44,7 +45,7 @@
                                             <button class="postLike" type="submit" ><i class="far fa-bookmark"></i></button>
 
                                         </form>
-                                 </li>
+                                    </li>
 
                                 </ul>
                                 <div class="postLikes">
@@ -65,7 +66,7 @@
                                 @endphp
                                 <div class="postCaption">
                                     <a class="font-weight-bold d-block w-100"
-                                       href="{{url('/profile')}}"> {{ $item->user_name }} </a>
+                                        href="{{url('/profile')}}"> {{ $item->user_name }} </a>
                                     <p class="m-0">
                                         {{ $item->caption }}
                                     </p>
@@ -76,7 +77,7 @@
                                 @if ($item->id == $item1->post_id)
                                     <div class="postComments">
                                         <a class="pl-3 pr-1 font-weight-bold"
-                                           href="{{url('/profile')}}"> {{ $item1->user->username }} </a>
+                                            href="{{url('/profile')}}"> {{ $item1->user->username }} </a>
                                         <p class="pl-3 pr-1 pb-2 m-0">
                                             {{$item1->comment}}
                                         </p>
@@ -85,7 +86,7 @@
                             @endforeach
 
                             <div class="postAddComment">
-                                 <form  action="{{ url('add-comments') }}" method="POST" enctype="multipart/form-data">
+                                    <form  action="{{ url('add-comments') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <textarea placeholder="Comment" name="comment" ></textarea>
                                     <input type="hidden" name="userID" value="{{ auth()->user()->id }}">
@@ -93,11 +94,12 @@
 
                                     <button class="btn btn-primary add-comment" type="submit" >Post</button>
 
-                                </form>
+                                    </form>
                             </div>
                         </div>
                         @break
                         @endif
+
 
                         @endforeach
                     @endforeach

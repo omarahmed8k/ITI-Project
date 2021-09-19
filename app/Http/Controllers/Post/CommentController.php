@@ -22,7 +22,7 @@ class CommentController extends Controller
         
         $comment ->save();
 
-        return view('home');
+        return redirect()->route('home');
     }
 
 }
