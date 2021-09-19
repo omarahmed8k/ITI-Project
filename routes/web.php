@@ -9,7 +9,6 @@ use App\Http\Controllers\Profile\EditController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\SearchController;
 
-// Home
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('home');
 
@@ -33,21 +32,17 @@ Route::post('/edit', [EditController::class, 'editData'])->name('edit.data')->mi
 
 //followers
 
-
 Route::get('/followers', 'App\Http\Controllers\Profile\FollowersController@index')->middleware('auth')->name('followers.index');
 Route::post('/follow/{id}', 'App\Http\Controllers\Profile\FollowersController@follow')->middleware('auth')->name('followers.follow');
 Route::delete('/unfollow/{id}', 'App\Http\Controllers\Profile\FollowersController@unfollow')->middleware('auth')->name('followers.unfollow');
 
+//=======
 
 // Route::get('/search', [SearchController::class, 'searchPage'])->name('search.show');
 Route::post('/search', [SearchController::class, 'searchPage'])->name('search.data');
-
-
-
 Route::get('/followers', function () {
     return view('profile.followersPage');
 })->middleware('auth');
-
 
 //following
 
@@ -60,15 +55,9 @@ Route::delete('/unfollowFollowing/{id}', 'App\Http\Controllers\Profile\Following
 
 Route::get('add-posts', [CreateController::class, 'create'])->middleware('auth');
 Route::post('add-posts', [StoreController::class, 'store'])->middleware('auth');
-
-
-
 Route::get('/post', function () {
     return view('post.viewPost');
 })->middleware('auth');
-
-
-
 
 // --------------
 
