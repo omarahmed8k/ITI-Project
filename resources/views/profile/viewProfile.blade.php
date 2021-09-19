@@ -7,7 +7,7 @@
                 <div class="topProfile">
 
                     <div class="profileImg">
-                        <img src="{{asset('img/user.png')}}">
+                        <img src="{{ asset('user'.$user->id.'/'.$user->avatar ) }}">
                     </div>
 
                     <div class="profileData">
@@ -19,7 +19,7 @@
 
                         <ul class="profileCounter">
                             <li>
-                                <strong>24</strong> posts
+                                <strong>{{ $postsCount }}</strong> posts
                             </li>
                             <li>
                                 <a href="{{url('/followers')}}">
@@ -41,12 +41,12 @@
 
                         <div class="profileBio">
                             <p>
-                                {{ $profile->bio ?? 'nothing' }}
+                                {{ $profile->bio ?? '' }}
                             </p>
                         </div>
 
                         <div class="profileWebsite">
-                          <a href=" ">{{ $profile->website ?? 'nothing' }}</a>
+                            <a href="{{ $profile->website ?? '' }} ">{{ $profile->website ?? '' }}</a>
                         </div>
 
                     </div>
@@ -72,21 +72,15 @@
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
                             <div class="row">
-                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid"
-                                                                                        src="{{asset('img/acpc.jpeg')}}"
-                                                                                        alt=""></a>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid"
-                                                                                        src="{{asset('img/Omar.jpg')}}"
-                                                                                        alt=""></a>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                    <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid"
-                                                                                        src="{{asset('img/omarr.jpg')}}"
-                                                                                        alt=""></a>
-                                </div>
+                                @isset($posts)
+                                    @foreach($posts as $post)
+                                        <div class="col-sm-12 col-md-6 col-lg-4">
+                                            <a class="profilePost" href="{{url('/post')}}"><img class="img-fluid"
+                                                                                                src="{{asset('uploads/post/'.$post->image)}}"
+                                                                                                alt=""></a>
+                                        </div>
+                                    @endforeach
+                                @endisset
                             </div>
 
                         </div>

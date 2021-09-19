@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\Post\CreateController;
 use App\Http\Controllers\Post\StoreController;
-use App\Http\Controllers\Post\CommentController;
 use App\Http\Controllers\Profile\AddDataController;
 use App\Http\Controllers\Profile\EditController;
 // Updated upstream
