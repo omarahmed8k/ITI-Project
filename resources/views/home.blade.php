@@ -9,8 +9,8 @@
                     @foreach ($posts as $item)
                     @foreach($followers as $item5)
                         @if($item->user_id == $item5->user_id && $item5->follower_id == auth()->user()->id)
-                        
-                    
+
+
                         <div class="homePost d-flex flex-column">
                             <div class="postOwner">
                                 <a href="{{ url('/profile') }}"><img
@@ -31,14 +31,14 @@
 
                                  </form>
                                     </li>
-                                    
+
                                     <li><button onclick="window.location.href='/post/{{  $item->id; }}';" ><i class="far fa-comment"></i></button></li>
                                 </ul>
                                 <ul class="ml-auto">
                                     <li>
                                         <form  action="{{ url('save-post') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" name="userID" value="{{ $item->user_id }}">
+                                            <input type="hidden" name="userID" value="{{ auth()->user()->id }}">
                                             <input type="hidden" name="postID" value="{{ $item->id }}">
 
                                             <button class="postLike" type="submit" ><i class="far fa-bookmark"></i></button>
