@@ -50,8 +50,15 @@
                             @endforeach
 
                             <div class="postAddComment">
-                                <textarea placeholder="Comment" name="comment"></textarea>
-                                <a class="font-weight-bold pr-1" href="#">Post</a>
+                                 <form  action="{{ url('add-comments') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <textarea placeholder="Comment" name="comment" ></textarea>
+                                    <input type="hidden" name="userID" value="{{ auth()->user()->id }}">
+                                    <input type="hidden" name="postID" value="{{ $item->id }}">
+
+                                    <button class="btn btn-primary add-comment" type="submit" >Post</button>
+
+                                </form>
                             </div>
                         </div>
 
