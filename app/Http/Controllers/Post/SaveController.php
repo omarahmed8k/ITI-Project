@@ -22,7 +22,7 @@ class SaveController extends Controller
       return redirect()->route('home');
     }
     else {
-      $deletedPost= Saved_post::where('post_id',$request->input('postID'))->delete();
+      $deletedPost= Saved_post::where('post_id',$request->input('postID'))->where('user_id',$request->input('userID'))->delete();
       return redirect()->route('home');
     }
 
