@@ -18,7 +18,6 @@ class CommentController extends Controller
         $comment->comment=$request->input('comment');
         $comment->user_id=$request->input('userID');
         $comment->post_id=$request->input('postID');
-        $comment->save();
 
         
         $comment ->save();

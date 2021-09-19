@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Comment;
-
+use App\Models\Like;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 class HomeController extends Controller
@@ -19,8 +19,9 @@ class HomeController extends Controller
     {
         $posts = Post::all();
         $users = User::all();
+        $likes=Like::all();
         $comments = Comment::all();
 
-        return view('home', compact('posts', 'users', 'comments'));
+        return view('home', compact('posts', 'users', 'comments','likes'));
     }
 }

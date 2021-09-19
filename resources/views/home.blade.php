@@ -18,7 +18,15 @@
                             </div>
                             <div class="postFeatures">
                                 <ul>
-                                    <li><a class="postLike" onclick="fill()" href="#"><i class="far fa-heart"></i></a>
+                                    <li>
+                                    <form  action="{{ url('add-likes') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="userID" value="{{ auth()->user()->id }}">
+                                    <input type="hidden" name="postID" value="{{ $item->id }}">
+
+                                    <button class="postLike" type="submit" ><i class="far fa-heart"></i></button>
+
+                                 </form>
                                     </li>
                                     <li><a href="{{url('/post')}}"><i class="far fa-comment"></i></a></li>
                                 </ul>
@@ -26,8 +34,21 @@
                                     <li><a href="#"><i class="far fa-bookmark"></i></a></li>
                                 </ul>
                                 <div class="postLikes">
-                                    300 likes
-                                </div>
+                                @php
+                                $counter=0;
+                                foreach ($likes as $item2){
+                                    if($item2->post_id == $item->id)
+                                    {
+                                
+                                        $counter=$counter+1;
+                                    }//end if
+                                    
+
+                                }//end foreach
+                                    echo "$counter";
+                                    echo" likes";
+                                echo"</div>";
+                                @endphp
                                 <div class="postCaption">
                                     <a class="font-weight-bold d-block w-100"
                                        href="{{url('/profile')}}"> {{ $item->user_name }} </a>
