@@ -15,8 +15,8 @@ class LikeController extends Controller
     public function store(Request $request){
         
         $like = new Like;
-        if(!(Like::where('post_id', '=',$request->input('postID'))->exists()))
-        {
+        //if(!(Like::where('post_id', '=',$request->input('postID'))->exists()))
+        //{
 
                 $like->user_id=$request->input('userID');
                 $like->post_id=$request->input('postID');
@@ -25,11 +25,11 @@ class LikeController extends Controller
                 $like ->save();
                 return redirect()->route('home');
 
-        }
-        else {
-          $deletedPost= Like::where('post_id',$request->input('postID'))->delete();
-          return redirect()->route('home');
-        }
+        //}
+       // else {
+         // $deletedPost= Like::where('post_id',$request->input('postID'))->delete();
+         // return redirect()->route('home');
+       // }
 
 
     }
