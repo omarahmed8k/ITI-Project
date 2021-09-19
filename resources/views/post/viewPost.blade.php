@@ -16,9 +16,15 @@
                 </div>
                 <div class="details">
                     <a class="owner" href="{{ url('/profile') }}"><img src="{{asset('img/acpc.jpeg')}}"><span>{{$item->user->username}}</span></a>
-                    
+                   
                     <div class="comments-container">
-                        
+                         <div class="caption">
+                            <a href="{{ url('/profile') }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>{{$item->user->username}} </span></a>
+                            <p class="m-0">
+                                <span class="text-muted"> {{ $item->caption }} </span>
+                            </p>
+                            <span class="time">{{$item->created_at}}</span>
+                        </div>
                         @foreach ($comments as $item1)
                                 @if ($ids == $item1->post_id)
                                         <div class="comment">
