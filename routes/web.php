@@ -57,10 +57,7 @@ Route::delete('/unfollowFollowing/{id}', 'App\Http\Controllers\Profile\Following
 
 Route::get('add-posts', [CreateController::class, 'create'])->middleware('auth');
 Route::post('add-posts', [StoreController::class, 'store'])->middleware('auth');
-Route::get('/post', function () {
-    return view('post.viewPost');
-})->middleware('auth');
-
+Route::get('/post/{id}', 'App\Http\Controllers\Post\ViewController@index')->middleware('auth');
 //<<<<<<< HEAD
 
 //comments

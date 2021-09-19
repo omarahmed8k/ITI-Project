@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class LikeController extends Controller
 {
     public function create(){
-        return view('home');
+        return route('home');
     }
 
 
@@ -21,6 +21,7 @@ class LikeController extends Controller
         
         $like ->save();
 
-        return view('home');
+        //return route('home');
+        return redirect()->route('home');
     }
 }

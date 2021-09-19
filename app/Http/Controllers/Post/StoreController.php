@@ -48,6 +48,6 @@ class StoreController extends Controller
         }
         $post ->save();
 
-        return view('post.addPost');
+        return redirect()->route('home');
     }
 }
