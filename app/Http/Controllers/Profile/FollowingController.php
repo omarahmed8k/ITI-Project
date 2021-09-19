@@ -18,6 +18,14 @@ class FollowingController extends Controller
 
         $id = Auth::id();
         $users = User::find($id)->following;
+        foreach ($users as $user){
+            if (isset($user->avatar)) {
+                $user->avatar = 'user' . $user->id . '/' . $user->avatar;
+
+            } else {
+                $user->avatar = '/img/user.png';
+            }
+        }
         return view('profile.followingPage')->with('users',$users);
     }
 

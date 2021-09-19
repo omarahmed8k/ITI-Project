@@ -53,7 +53,7 @@
                         <a class="nav-link mx-2" href="{{ url('/home') }}"><i class="fas fa-home fa-lg"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-2" href="{{ url('/profile') }}"><img class="nav-img" src="{{asset('img/user.png')}}" alt="user-image" /></a>
+                        <a class="nav-link mr-2" href="{{ url('/profile') }}"><i class="fas fa-user"></i></a>
                     </li>
                     <li class="nav-item">
                         <a onclick=" event.preventDefault();document.getElementById('logout-form').submit();" class="nav-link" href="{{ url('/logout') }}"><i class="fas fa-sign-out-alt fa-lg"></i></a>

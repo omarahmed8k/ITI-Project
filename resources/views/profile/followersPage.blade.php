@@ -12,7 +12,7 @@
                         @isset($followers)
                             @foreach($followers as $follower)
                                 <li>
-                                    <img src="{{asset('img/user.png')}}"/>
+                                    <img src="{{ asset($follower->avatar) }}"/>
                                     <a href="{{url('/profile')}}" class="followersLink">
                                         <span class="name">{{ $follower->name }}</span>
                                         <span class="id">{{ $follower->username }}</span>

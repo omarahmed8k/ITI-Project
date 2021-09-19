@@ -8,6 +8,8 @@ use App\Models\Comment;
 use App\Models\Like;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     public function __construct()
@@ -22,6 +24,20 @@ class HomeController extends Controller
         $likes=Like::all();
         $comments = Comment::all();
 
+
         return view('home', compact('posts', 'users', 'comments','likes'));
+
+        foreach ($posts as $post) {
+            if (isset($post->user->avatar)) {
+                $post->user->avatar = 'user' . $post->user->id . '/' . $post->user->avatar;
+            } else {
+                $post->user->avatar = '/img/user.png';
+            }
+        }
+
+
+
+        return view('home', compact('posts', 'users', 'comments'));
+
     }
 }

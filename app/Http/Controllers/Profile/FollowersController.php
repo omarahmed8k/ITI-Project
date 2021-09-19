@@ -28,6 +28,13 @@ class FollowersController extends Controller
 
             $checkUser = User::findOrFail($follower->id);
 
+            if (isset($follower->avatar)) {
+                $follower->avatar = 'user' . $follower->id . '/' . $follower->avatar;
+                echo $follower->avatar;
+            } else {
+                $follower->avatar = '/img/user.png';
+            }
+
             if ($user->isFollowing($checkUser)) {
 
                 $follower->relation = true;
@@ -59,4 +66,6 @@ class FollowersController extends Controller
         $user->followers()->detach($follower);
         return redirect()->route('followers.index');
     }
+
+
 }

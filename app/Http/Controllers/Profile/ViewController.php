@@ -33,6 +33,12 @@ class ViewController extends Controller
         $posts = User::find($id)->posts;
         $postsCount = $posts->count();
 
+        if (isset($user->avatar)) {
+            $user->avatar = 'user' . $user->id . '/' . $user->avatar;
+        } else {
+            $user->avatar = '/img/user.png';
+        }
+
 
         return view('profile.viewProfile', ['user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount, 'posts' =>$posts,'postsCount'=>$postsCount]);
     }

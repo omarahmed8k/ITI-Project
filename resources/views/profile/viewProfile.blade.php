@@ -7,13 +7,13 @@
                 <div class="topProfile">
 
                     <div class="profileImg">
-                        <img src="{{ asset('user'.$user->id.'/'.$user->avatar ) }}">
+                        <img src="{{ asset($user->avatar) }}">
                     </div>
 
                     <div class="profileData">
 
                         <div class="profileUsername">
-                            <p>{{ $user->username }}</p>
+                            <p>{{ $user->username ?? " " }}</p>
                             <a href="{{url('/edit')}}"><i class="fas fa-cog"></i> Edit Profile</a>
                         </div>
 

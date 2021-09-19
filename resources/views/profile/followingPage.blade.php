@@ -11,7 +11,7 @@
                     <ul>
                         @foreach($users as $user)
                             <li>
-                                <img src="{{asset('img/user.png')}}"/>
+                                <img src="{{asset($user->avatar)}}"/>
                                 <a href="{{url('/profile')}}" class="followersLink">
                                     <span class="name">{{ $user->name }}</span>
                                     <span class="id">{{ $user->username }}</span>
