@@ -16,7 +16,6 @@ class FollowersController extends Controller
     }
 
 
-
     public function index()
     {
 
@@ -45,7 +44,7 @@ class FollowersController extends Controller
 
     public function follow($id)
     {
-        $follower= Auth::user();
+        $follower = Auth::user();
         $user = User::find($id);
         $user->followers()->attach($follower);
         return redirect()->route('followers.index');
@@ -55,7 +54,7 @@ class FollowersController extends Controller
     public function unfollow($id)
     {
 
-        $follower =Auth::user();
+        $follower = Auth::user();
         $user = User::find($id);
         $user->followers()->detach($follower);
         return redirect()->route('followers.index');

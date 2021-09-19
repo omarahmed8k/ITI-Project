@@ -9,7 +9,7 @@ use App\Http\Controllers\Profile\AddDataController;
 use App\Http\Controllers\Profile\EditController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\SearchController;
-
+use App\Http\Controllers\Profile\ViewController;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('home');
 
@@ -30,6 +30,7 @@ Route::get('/tags', function () {
 Route::get('/profile', 'App\Http\Controllers\Profile\ViewController@index')->middleware('auth')->name('profile.index');
 Route::get('/edit', [EditController::class, 'showedit'])->name('edit.data.get')->middleware('auth');
 Route::post('/edit', [EditController::class, 'editData'])->name('edit.data')->middleware('auth');
+Route::get('/profile/{id}', [ViewController::class, 'profiles'])->middleware('auth');
 
 //followers
 
@@ -41,9 +42,7 @@ Route::delete('/unfollow/{id}', 'App\Http\Controllers\Profile\FollowersControlle
 
 // Route::get('/search', [SearchController::class, 'searchPage'])->name('search.show');
 Route::post('/search', [SearchController::class, 'searchPage'])->name('search.data');
-Route::get('/followers', function () {
-    return view('profile.followersPage');
-})->middleware('auth');
+
 
 //following
 
