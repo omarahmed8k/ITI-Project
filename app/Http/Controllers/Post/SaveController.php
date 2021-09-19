@@ -21,6 +21,6 @@ class SaveController extends Controller
         
         $saved ->save();
 
-        return view('home');
+        return redirect()->route('home');
     }
 }
