@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Http\Request;
-use App\Models\User_follower;
 use Illuminate\Support\Facades\Auth;
 
 
