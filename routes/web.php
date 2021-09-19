@@ -6,11 +6,11 @@ use App\Http\Controllers\Post\CreateController;
 use App\Http\Controllers\Post\StoreController;
 use App\Http\Controllers\Profile\AddDataController;
 use App\Http\Controllers\Profile\EditController;
-<<<<<<< Updated upstream
+// Updated upstream
 use App\Http\Controllers\ExploreController;
-=======
+//=======
 use App\Http\Controllers\SearchController;
->>>>>>> Stashed changes
+// Stashed changes
 // Home
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('home');
@@ -35,11 +35,11 @@ Route::post('/edit', [EditController::class, 'editData'])->name('edit.data')->mi
 
 //followers
 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 Route::get('/followers', 'App\Http\Controllers\Profile\FollowersController@index')->middleware('auth')->name('followers.index');
 Route::post('/follow/{id}', 'App\Http\Controllers\Profile\FollowersController@follow')->middleware('auth')->name('followers.follow');
 Route::delete('/unfollow/{id}', 'App\Http\Controllers\Profile\FollowersController@unfollow')->middleware('auth')->name('followers.unfollow');
-=======
+//=======
 // Route::get('/search', [SearchController::class, 'searchPage'])->name('search.show');
 Route::post('/search', [SearchController::class, 'searchPage'])->name('search.data');
 
@@ -48,7 +48,7 @@ Route::post('/search', [SearchController::class, 'searchPage'])->name('search.da
 Route::get('/followers', function () {
     return view('profile.followersPage');
 })->middleware('auth');
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 
 //following
 
