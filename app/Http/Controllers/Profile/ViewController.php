@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Profile;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ViewController extends Controller
 {
@@ -20,18 +20,18 @@ class ViewController extends Controller
     {
 
         $id = Auth::id();
-        $user = User::find($id);
+        $user = User::findOrFail($id);
 
         $profile = $user->profile;
 
-        $followers = User::find($id)->followers;
+        $followers = User::findOrFail($id)->followers;
         $followersCount = $followers->count();
 
-        $following = User::find($id)->following;
+        $following = User::findOrFail($id)->following;
         $followingCount = $following->count();
 
-        $posts = User::find($id)->posts;
-        $postsCount = $posts->count();
+        $posts = $user->posts;
+        $postsNum = $posts->count();
 
         if ($user->avatar == 'user.png') {
             $user->avatar = '/img/user.png';
@@ -40,7 +40,31 @@ class ViewController extends Controller
             $user->avatar = 'user' . $user->id . '/' . $user->avatar;
         }
 
+        return view('profile.viewProfile', ['postsNum' => $postsNum, 'posts' => $posts, 'user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount]);
+    }
 
-        return view('profile.viewProfile', ['user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount, 'posts' => $posts, 'postsCount' => $postsCount]);
+    public function profiles($id = null)
+    {
+        $user = User::findOrFail($id);
+
+        $profile = $user->profile;
+
+        $followers = $user->followers;
+        $followersCount = $followers->count();
+
+        $following = $user->following;
+        $followingCount = $following->count();
+
+        $posts = $user->posts;
+        $postsNum = $posts->count();
+
+        if ($user->avatar == 'user.png') {
+            $user->avatar = '/img/user.png';
+        } else {
+
+            $user->avatar = 'user' . $user->id . '/' . $user->avatar;
+        }
+
+        return view('profile.viewProfile', ['user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount, 'postsNum' => $postsNum, 'posts' => $posts]);
     }
 }
