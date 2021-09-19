@@ -25,7 +25,7 @@ class HomeController extends Controller
         $comments = Comment::all();
 
 
-        return view('home', compact('posts', 'users', 'comments','likes'));
+
 
         foreach ($posts as $post) {
             if (isset($post->user->avatar)) {
@@ -37,7 +37,7 @@ class HomeController extends Controller
 
 
 
-        return view('home', compact('posts', 'users', 'comments'));
+        return view('home', compact('posts', 'users', 'comments','likes'));
 
     }
 }
