@@ -75,5 +75,5 @@
 
     </main>
 </body>
-
+@yield('scriptcode')
 </html>

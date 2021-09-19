@@ -12,15 +12,18 @@ class SaveController extends Controller
     }
 
 
-    public function store(Request $request){
-        
-        $saved = new Saved_post;
-        $saved->user_id=$request->input('userID');
-        $saved->post_id=$request->input('postID');
+  public function store(Request $request){
+    $saved = new Saved_post;
+    if (!(Saved_post::where('post_id', '=',$request->input('postID'))->exists())) {
+      $saved->user_id=$request->input('userID');
+      $saved->post_id=$request->input('postID');
+      $saved ->save();
+      return redirect()->route('home');
+    }
+    else {
+      $deletedPost= Saved_post::where('post_id',$request->input('postID'))->delete();
+      return redirect()->route('home');
+    }
 
-        
-        $saved ->save();
-
-        return view('home');
     }
 }
