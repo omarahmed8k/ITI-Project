@@ -41,8 +41,9 @@
                 <div class="logo">
                     <a class="navbar-brand" href="{{ url('/home') }}"><img src="{{asset('img/instagram.png')}}" alt="instagram-logo" /></a>
                 </div>
-                <form class="form-inline d-none d-sm-block">
-                    <input class="form-control" type="search" placeholder="Search" />
+                <form class="form-inline d-none d-sm-block was-validated" action="{{ route('search.data') }}" method="POST" enctype="multipart/form-data">
+                  @csrf
+                    <input class="form-control" type="search" placeholder="Search" name="searchbar" />
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">

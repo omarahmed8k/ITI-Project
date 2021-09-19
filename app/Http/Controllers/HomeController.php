@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Models\Comment;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Database\Eloquent\Model;
 class HomeController extends Controller
 {
     public function __construct()
