@@ -60,7 +60,7 @@ Route::get('/post', function () {
     return view('post.viewPost');
 })->middleware('auth');
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 //comments
 Route::get('add-comments', [CommentController::class, 'create'])->middleware('auth');
@@ -68,8 +68,8 @@ Route::post('add-comments', [CommentController::class, 'store'])->middleware('au
 
 
 
-=======
->>>>>>> e615297c68ebcb23b9e1cb8e3bdb184df5832485
+//=======
+//>>>>>>> e615297c68ebcb23b9e1cb8e3bdb184df5832485
 // --------------
 
 // Auth (Register - Login - Forget Password)
