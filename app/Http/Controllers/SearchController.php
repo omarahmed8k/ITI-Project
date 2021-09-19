@@ -20,7 +20,8 @@ class SearchController extends Controller
       //$users= User::all();
       $user = Auth::user();
       $userId=$user->id;
-      $users= User::select('id','username', 'avatar')->where('username', 'LIKE', '%'.$request->searchbar.'%')->get();
+      $userName=$user->username;
+      $users= User::select('id','username', 'avatar')->where('username', 'LIKE', '%'.$request->searchbar.'%') ->where('username', '<>', $userName)->get();
       $counts=count($users);
       return view('search')->with('searchItem',$request->searchbar)->with('foundusers',$users)->with('usercount',$counts);
     }
