@@ -13,6 +13,7 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Profile\ViewController;
 
+
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('verified')->name('home');
 
 // --------------
@@ -21,9 +22,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middlewa
 
 Route::get('/explore', [ExploreController::class, 'explore'])->middleware('verified');
 
-Route::get('/tags/{id}', function () {
-    return view('tags');
-})->middleware('verified');
+Route::get('/tags/{id}','App\Http\Controllers\TagController@index')->middleware('verified');
 
 // --------------
 
