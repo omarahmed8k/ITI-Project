@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Auth\Notifications\ResetPassword;
 
-
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -33,10 +34,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
     public function sendEmailVerificationNotification()
     {
-        $this->notify(new VerifyEmailQueued);
+        $this->notify(new \App\Notifications\Auth\VerifyEmail());
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new \App\Notifications\Auth\ResetPassword($token));
     }
 
     public function followers()
@@ -47,7 +52,6 @@ class User extends Authenticatable
     public function following()
     {
         return $this->belongsToMany(User::class, 'user_followers', 'follower_id', 'user_id');
-
     }
 
     public function profile()
@@ -73,13 +77,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Saved_post::class);
     }
-
-
-
     public function isFollowing(User $user)
     {
         return $this->following()->where('user_id', $user->id)->count();
-
     }
-
 }
