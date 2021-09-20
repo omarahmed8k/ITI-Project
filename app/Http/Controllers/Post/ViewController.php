@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Like;
+use App\Models\Tag;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,8 +19,9 @@ class ViewController extends Controller
         $users = User::all();
         $likes=Like::all();
         $comments = Comment::all();
+        $tags=Tag::all();
         $ids=$id;
 
-        return view('post.viewPost', compact('posts', 'users', 'comments','likes','ids'));
+        return view('post.viewPost', compact('posts', 'users', 'comments','likes','ids','tags'));
     }
 }

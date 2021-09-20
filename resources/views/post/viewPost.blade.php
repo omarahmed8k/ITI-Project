@@ -21,7 +21,22 @@
                          <div class="caption">
                             <a href="{{  url('/profile'.'/'.$item->user->id) }}"><img class="img-fluid" src="{{asset('img/acpc.jpeg')}}"><span>{{$item->user->name}} </span></a>
                             <p class="m-0">
-                                <span class="text-muted"> {{ $item->caption }} </span>
+                                <span class="text-muted"> 
+                                    @php
+
+                                            $cap = $item->caption;
+                                            foreach($tags as $tag){
+
+                                                preg_match_all('/#(\w+)/', $cap, $matches);
+                                                $ncap = str_replace($tag->name,"<a href='/tags/$tag->id '>$tag->name</a>",$cap);
+                                                $cap = $ncap;
+
+                                            }
+                                            echo"$cap";
+                                        @endphp
+                                    
+                                    
+                                     </span>
                             </p>
                             <span class="time">{{$item->created_at}}</span>
                         </div>
