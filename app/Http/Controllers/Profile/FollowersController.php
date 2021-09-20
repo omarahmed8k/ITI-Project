@@ -28,10 +28,11 @@ class FollowersController extends Controller
 
             $checkUser = User::findOrFail($follower->id);
 
-            if (isset($follower->avatar)) {
-                $follower->avatar = 'user' . $follower->id . '/' . $follower->avatar;
-            } else {
+            if ($follower->avatar == 'user.png') {
                 $follower->avatar = '/img/user.png';
+            } else {
+
+                $follower->avatar = 'user' . $follower->id . '/' . $follower->avatar;
             }
 
             if ($user->isFollowing($checkUser)) {
