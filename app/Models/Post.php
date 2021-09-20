@@ -26,6 +26,10 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function post_tags()
+    {
+        return $this->hasMany(Post_tag::class);
+    }
     public function saved_posts()
     {
         return $this->hasMany(Saved_post::class);

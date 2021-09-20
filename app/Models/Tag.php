@@ -9,4 +9,12 @@ class Tag extends Model
 {
     use HasFactory;
     protected $table ='tags';
+    protected $fillable=[
+        'name',
+        'created_at',
+        'updated_at'];
+    public function post_tags()
+    {
+        return $this->hasMany(Post_tag::class);
+    }
 }
