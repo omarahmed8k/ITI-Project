@@ -77,7 +77,7 @@
                                 @if ($item->id == $item1->post_id)
                                     <div class="postComments">
                                         <a class="pl-3 pr-1 font-weight-bold"
-                                            href="{{url('/profile')}}"> {{ $item1->user->username }} </a>
+                                            href="{{url('/profile')}}"> {{ $item1->user->name }} </a>
                                         <p class="pl-3 pr-1 pb-2 m-0">
                                             {{$item1->comment}}
                                         </p>

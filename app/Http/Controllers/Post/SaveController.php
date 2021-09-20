@@ -28,4 +28,29 @@ class SaveController extends Controller
 
 
     }
+
+
+    public function create2(){
+      return view('home');
+  }
+
+
+public function store2(Request $request){
+  $saved = new Saved_post;
+  $saveflag=(Saved_post::where('post_id', '=',$request->input('postID'))->exists())&&(Saved_post::where('user_id', '=',$request->input('userID'))->exists());
+  if (!($saveflag)) {
+    $saved->user_id=$request->input('userID');
+    $saved->post_id=$request->input('postID');
+    $saved ->save();
+    return redirect()->route('post', [$saved->post_id]);
+  }
+  else {
+    $deletedPost= Saved_post::where('post_id',$request->input('postID'))->where('user_id',$request->input('userID'))->delete();
+    $saved->post_id=$request->input('postID');
+    return redirect()->route('post', [$saved->post_id]);
+  }
+
+
+  }
+
 }
