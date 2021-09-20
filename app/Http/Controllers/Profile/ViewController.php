@@ -43,11 +43,12 @@ class ViewController extends Controller
             $user->avatar = 'user' . $user->id . '/' . $user->avatar;
         }
 
-        return view('profile.viewProfile', ['postsNum' => $postsNum, 'posts' => $posts, 'user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount,'saved', 'saved_posts' => $saved_posts]);
+        return view('profile.viewProfile', ['postsNum' => $postsNum, 'posts' => $posts, 'user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount, 'saved', 'saved_posts' => $saved_posts]);
     }
 
     public function profiles($id = null)
     {
+        $auth_user = Auth::user();
         $user = User::findOrFail($id);
 
         $profile = $user->profile;
@@ -66,6 +67,14 @@ class ViewController extends Controller
         } else {
 
             $user->avatar = 'user' . $user->id . '/' . $user->avatar;
+        }
+
+        if ($auth_user->isFollowing($user)) {
+
+            $user->relation = true;
+        } else {
+
+            $user->relation = false;
         }
 
         return view('profile.viewProfile', ['user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount, 'postsNum' => $postsNum, 'posts' => $posts]);

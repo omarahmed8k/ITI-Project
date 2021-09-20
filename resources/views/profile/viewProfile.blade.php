@@ -19,8 +19,19 @@
                                 <a href="{{url('/edit')}}"><i class="fas fa-cog"></i> Edit Profile</a>
                             @else
 
-                                <a class="followersBtn follow" href="#">Follow</a>
-                                <a class="followersBtn unFollow" href="#">Un Follow</a>
+                                @if($user->relation)
+                                    <form action="{{ route('followers.unfollow', $user->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input class="followersBtn unFollow" type="submit" value="Unfollow">
+                                    </form>
+                                @else
+                                    <form action="{{ route('followers.follow', $user->id) }}" method="POST">
+                                        @csrf
+                                        <input class="followersBtn" type="submit" value="Follow">
+                                    </form>
+
+                                @endif
 
                             @endif
                         </div>
