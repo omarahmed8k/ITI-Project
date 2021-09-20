@@ -9,7 +9,7 @@
                 @isset($posts)
                     @foreach ($posts as $item)
                         @foreach($followers as $item5)
-                            @if( ($item->user_id == $item5->user_id && $item5->follower_id == auth()->user()->id) || ($item->user_id == auth()->user()->id))
+                            @if( ($item->user_id == $item5->user_id && $item5->follower_id == auth()->user()->id) || ($item->user_id == Auth::id()))
 
 
                                 <div class="homePost d-flex flex-column">
