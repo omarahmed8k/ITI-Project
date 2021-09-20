@@ -57,21 +57,26 @@ Route::delete('/unfollowFollowing/{id}', 'App\Http\Controllers\Profile\Following
 
 Route::get('add-posts', [CreateController::class, 'create'])->middleware('auth');
 Route::post('add-posts', [StoreController::class, 'store'])->middleware('auth');
-Route::get('/post/{id}', 'App\Http\Controllers\Post\ViewController@index')->middleware('auth');
+Route::get('/post/{id}', 'App\Http\Controllers\Post\ViewController@index')->middleware('auth')->name('post');
 //<<<<<<< HEAD
 
 //comments
 Route::get('add-comments', [CommentController::class, 'create'])->middleware('auth');
 Route::post('add-comments', [CommentController::class, 'store'])->middleware('auth');
-
+Route::get('add-comments2', [CommentController::class, 'create2'])->middleware('auth');
+Route::post('add-comments2', [CommentController::class, 'store2'])->middleware('auth');
 
 //likes
 Route::get('add-likes', [LikeController::class, 'create'])->middleware('auth');
 Route::post('add-likes', [LikeController::class, 'store'])->middleware('auth');
+Route::get('add-likes2', [LikeController::class, 'create2'])->middleware('auth');
+Route::post('add-likes2', [LikeController::class, 'store2'])->middleware('auth');
 
 //save_posts
 Route::get('save-post', [SaveController::class, 'create'])->middleware('auth');
 Route::post('save-post', [SaveController::class, 'store'])->middleware('auth');
+Route::get('save-post2', [SaveController::class, 'create2'])->middleware('auth');
+Route::post('save-post2', [SaveController::class, 'store2'])->middleware('auth');
 
 
 //=======

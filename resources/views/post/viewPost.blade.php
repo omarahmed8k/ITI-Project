@@ -43,7 +43,7 @@
                     <div class="features">
                         <ul>
                             <li>
-                                <form  action="{{ url('add-likes') }}" method="POST" enctype="multipart/form-data">
+                                <form  action="{{ url('add-likes2') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="userID" value="{{ auth()->user()->id }}">
                                     <input type="hidden" name="postID" value="{{ $ids }}">
@@ -55,7 +55,7 @@
                             </li>
                             <li>
 
-                                     <form  action="{{ url('save-post') }}" method="POST" enctype="multipart/form-data">
+                                     <form  action="{{ url('save-post2') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="userID" value="{{ auth()->user()->id }}">
                                             <input type="hidden" name="postID" value="{{ $ids }}">
@@ -83,7 +83,7 @@
                                 @endphp
                     </div>
                     <div class="add-comment">
-                        <form  action="{{ url('add-comments') }}" method="POST" enctype="multipart/form-data">
+                        <form  action="{{ url('add-comments2') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <textarea placeholder="Comment" name="comment" ></textarea>
                                     <input type="hidden" name="userID" value="{{ auth()->user()->id }}">
