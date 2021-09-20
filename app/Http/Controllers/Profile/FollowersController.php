@@ -30,7 +30,6 @@ class FollowersController extends Controller
 
             if (isset($follower->avatar)) {
                 $follower->avatar = 'user' . $follower->id . '/' . $follower->avatar;
-                echo $follower->avatar;
             } else {
                 $follower->avatar = '/img/user.png';
             }

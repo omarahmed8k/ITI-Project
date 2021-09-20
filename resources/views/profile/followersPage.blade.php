@@ -13,7 +13,7 @@
                             @foreach($followers as $follower)
                                 <li>
                                     <img src="{{ asset($follower->avatar) }}"/>
-                                    <a href="{{url('/profile')}}" class="followersLink">
+                                    <a href="{{url('/profile/'.$follower->id)}}" class="followersLink">
                                         <span class="name">{{ $follower->name }}</span>
                                         <span class="id">{{ $follower->username }}</span>
                                     </a>
