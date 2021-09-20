@@ -377,6 +377,12 @@ ul {
 .postFeatures ul li a {
     color: #999;
 }
+.postFeatures ul li .postLike {
+    font-weight: 900;
+    background: transparent;
+    border: unset;
+    color: #999;
+}
 
 .postFeatures .postLikes {
     width: 100%;
@@ -411,12 +417,16 @@ ul {
 .postAddComment textarea {
     padding: 5px;
     resize: none;
-    width: 90%;
+    width: 85%;
     background: transparent;
     border: unset;
     outline: unset;
     height: 45px;
     overflow: auto;
+}
+.postAddComment button {
+    width: 15%;
+    color: #3897f0;
 }
 .postPage {
     display: flex;
@@ -512,7 +522,10 @@ ul {
     font-size: 25px;
 }
 
-.postPage .features ul li a {
+.postPage .features .postLike {
+    font-weight: 900;
+    background: transparent;
+    border: unset;
     color: #999;
 }
 
@@ -533,12 +546,16 @@ ul {
 .postPage .add-comment textarea {
     padding: 5px;
     resize: none;
-    width: 90%;
+    width: 85%;
     background: transparent;
     border: unset;
     outline: unset;
     height: 45px;
     overflow: auto;
+}
+.postPage .add-comment button {
+    width: 15%;
+    color: #3897f0;
 }
 @media (max-width: 767px) {
     .postPage {
@@ -590,4 +607,8 @@ tr div {
 td {
     background: #fff;
     font-weight: 900;
+}
+
+.red {
+    color: #b32e2e !important;
 }
