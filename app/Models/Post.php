@@ -42,4 +42,9 @@ class Post extends Model
         return $this->belongsToMany(Tag::class,'post_tags','post_id','tag_id');
     }
 
+    public function users_saved_posts()
+    {
+        return $this->belongsToMany(User::class,'saved_posts','post_id','user_id');
+    }
+
 }

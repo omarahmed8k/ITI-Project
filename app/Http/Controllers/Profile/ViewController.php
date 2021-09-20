@@ -33,6 +33,9 @@ class ViewController extends Controller
         $posts = $user->posts;
         $postsNum = $posts->count();
 
+        $saved_posts = $user->saved_posts;
+//        dd($saved_posts);
+
         if ($user->avatar == 'user.png') {
             $user->avatar = '/img/user.png';
         } else {
@@ -40,7 +43,7 @@ class ViewController extends Controller
             $user->avatar = 'user' . $user->id . '/' . $user->avatar;
         }
 
-        return view('profile.viewProfile', ['postsNum' => $postsNum, 'posts' => $posts, 'user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount]);
+        return view('profile.viewProfile', ['postsNum' => $postsNum, 'posts' => $posts, 'user' => $user, 'profile' => $profile, 'followersCount' => $followersCount, 'followingCount' => $followingCount,'saved', 'saved_posts' => $saved_posts]);
     }
 
     public function profiles($id = null)

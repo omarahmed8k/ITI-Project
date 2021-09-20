@@ -75,7 +75,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     public function saved_posts()
     {
-        return $this->hasMany(Saved_post::class);
+        return $this->belongsToMany(Post::class,'saved_posts','user_id','post_id');
     }
     public function isFollowing(User $user)
     {
