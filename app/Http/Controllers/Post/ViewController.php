@@ -22,6 +22,14 @@ class ViewController extends Controller
         $tags=Tag::all();
         $ids=$id;
 
+        foreach ($posts as $post) {
+            if ($post->user->avatar == 'user.png') {
+                $post->user->avatar = '/img/user.png';
+            } else {
+                $post->user->avatar = 'user' . $post->user->id . '/' . $post->user->avatar;
+            }
+        }
+
         return view('post.viewPost', compact('posts', 'users', 'comments','likes','ids','tags'));
     }
 }

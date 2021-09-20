@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $table ='posts';
-    protected $fillable=[
+
+    protected $table = 'posts';
+    protected $fillable = [
         'caption',
         'user_id',
         'image',
@@ -26,18 +27,19 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function post_tags()
-    {
-        return $this->hasMany(Post_tag::class);
-    }
     public function saved_posts()
     {
         return $this->hasMany(Saved_post::class);
     }
+
     public function likes()
     {
         return $this->hasMany(Like::class);
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class,'post_tags','post_id','tag_id');
+    }
 
 }

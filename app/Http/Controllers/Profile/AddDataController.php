@@ -52,9 +52,7 @@ class AddDataController extends Controller
            'avatar'=>$imageName
          ]);
 
-        return back()
-            ->with('success','You have successfully upload image.')
-            ->with('image',$imageName);
+        return redirect()->route('home');
     }
     /**
      * Display a listing of the resource.
