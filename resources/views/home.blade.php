@@ -14,7 +14,7 @@
 
                         <div class="homePost d-flex flex-column">
                             <div class="postOwner">
-                                <a href="{{ url('/profile') }}"><img
+                                <a href="{{ url('/profile'.'/'.$item->user->id) }}"><img
                                         src="{{ asset( $item->user->avatar ) }}"><span> {{ $item->user->name }}</span></a>
                             </div>
                             <div class="postImg">
@@ -77,7 +77,7 @@
                                 @if ($item->id == $item1->post_id)
                                     <div class="postComments">
                                         <a class="pl-3 pr-1 font-weight-bold"
-                                            href="{{url('/profile')}}"> {{ $item1->user->name }} </a>
+                                            href="{{ url('/profile'.'/'.$item1->user->id) }}"> {{ $item1->user->name }} </a>
                                         <p class="pl-3 pr-1 pb-2 m-0">
                                             {{$item1->comment}}
                                         </p>
