@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
 use App\Models\User;
-use App\Models\Profile;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ViewController extends Controller
@@ -34,7 +31,6 @@ class ViewController extends Controller
         $postsNum = $posts->count();
 
         $saved_posts = $user->saved_posts;
-//        dd($saved_posts);
 
         if ($user->avatar == 'user.png') {
             $user->avatar = '/img/user.png';
