@@ -21,7 +21,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middlewa
 
 Route::get('/explore', [ExploreController::class, 'explore'])->middleware('auth');
 
-Route::get('/tags', function () {
+Route::get('/tags/{name}', function () {
     return view('tags');
 })->middleware('auth');
 

@@ -68,7 +68,18 @@
                                     <a class="font-weight-bold d-block w-100"
                                         href="{{url('/profile')}}"> {{ $item->user_name }} </a>
                                     <p class="m-0">
-                                        {{ $item->caption }}
+                                        @php
+
+                                            $cap = $item->caption;
+                                            foreach($tags as $tag){
+
+                                                preg_match_all('/#(\w+)/', $cap, $matches);
+                                                $ncap = str_replace($tag->name,"<a href='/tags/$tag->id '>$tag->name</a>",$cap);
+                                                $cap = $ncap;
+
+                                            }
+                                            echo"$cap";
+                                        @endphp
                                     </p>
                                 </div>
                             </div>

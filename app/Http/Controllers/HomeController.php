@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Comment;
 use App\Models\Like;
 use App\Models\User_follower;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -25,6 +26,7 @@ class HomeController extends Controller
         $likes = Like::all();
         $comments = Comment::all();
         $followers = User_follower::all();
+        $tags=Tag::all();
 
 
         foreach ($posts as $post) {
@@ -36,7 +38,7 @@ class HomeController extends Controller
         }
 
 
-        return view('home', compact('posts', 'users', 'comments', 'likes', 'followers'));
+        return view('home', compact('posts', 'users', 'comments', 'likes', 'followers','tags'));
 
     }
 }
